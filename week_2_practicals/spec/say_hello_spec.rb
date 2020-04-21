@@ -7,11 +7,7 @@ describe SayHello do
     let(:message_double) { double :message }
 
     it 'sends an email' do
-      # allow(message_double).to receive(:send).with("friend@example.com",
-      # "HELLO!")
-
       expect(message_double).to receive_message_chain(:message, :send)
-
       say_hello.run
     end
   end
