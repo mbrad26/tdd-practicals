@@ -1,10 +1,15 @@
 class Lock
+  attr_reader :lock
+
+  def initialize
+    @lock = true
+  end
 
   def unlock
-    true
+    @lock = false
   end
 
   def lock
-    false
+    @lock = true
   end
 end

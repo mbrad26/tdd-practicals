@@ -1,8 +1,10 @@
 class Diary
- attr_reader :entries
+
+  attr_accessor :lock
+  attr_reader :entries
 
  def initialize
-   @lock = true
+   @lock = Lock.new
    @entries = []
  end
 
@@ -16,7 +18,4 @@ class Diary
     @entries.pop
   end
 
-  def unlock
-    @lock = false
-  end
 end
