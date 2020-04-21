@@ -1,20 +1,18 @@
 class Diary
+ attr_reader :entries, :locker
 
-  attr_accessor :lock
-  attr_reader :entries
-
- def initialize
-   @lock = Lock.new
+ def initialize(locker = Lock.new)
+   @locker = locker
    @entries = []
  end
 
   def add_entry(entry)
-    raise 'The secret diary is closed!' if @lock
+    raise 'The secret diary is closed!' if @locker.lock_it
     @entries << entry
   end
 
   def get_entries
-    raise 'The secret diary is closed!' if @lock
+    raise 'The secret diary is closed!' if @locker.lock_it
     @entries.pop
   end
 

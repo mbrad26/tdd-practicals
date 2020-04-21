@@ -5,7 +5,6 @@ describe Diary do
 
   context 'when diary is locked' do
     describe '#add_entry' do
-      it { is_expected.to respond_to(:add_entry).with(1).argument }
 
       it 'returns an error when diary is closed' do
         error = 'The secret diary is closed!'
@@ -26,9 +25,8 @@ describe Diary do
   end
 
   context 'when diary is unlocked' do
-    let(:lock) { double :lock, unlock: true}
     before do
-      diary.lock.unlock
+      diary.locker.unlock
     end
 
     describe '#add_entry' do
