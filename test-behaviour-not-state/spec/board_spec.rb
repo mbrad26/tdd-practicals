@@ -10,7 +10,6 @@ describe Board do
   end
 
   describe '#add_move_to_grid' do
-
     it 'responds to "add_move_to_grid"' do
       expect(board).to respond_to(:add_move_to_grid).with(1).argument
     end
