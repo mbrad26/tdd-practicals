@@ -5,7 +5,6 @@ describe Diary do
 
   context 'when diary is locked' do
     describe '#add_entry' do
-
       it 'returns an error when diary is closed' do
         error = 'The secret diary is closed!'
 
@@ -14,8 +13,6 @@ describe Diary do
     end
 
     describe '#get_entries' do
-      it { is_expected.to respond_to(:get_entries) }
-
       it 'returns an error when diary is closed' do
         error = 'The secret diary is closed!'
 

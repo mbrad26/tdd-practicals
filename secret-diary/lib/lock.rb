@@ -6,10 +6,12 @@ class Lock
   end
 
   def unlock
+    raise 'Diary already unlocked!' unless @lock_it
     @lock_it = false
   end
 
   def lock
+    raise 'Diary already locked!' if @lock_it
     @lock_it = true
   end
 end

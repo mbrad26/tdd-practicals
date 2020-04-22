@@ -8,6 +8,7 @@ class Diary
 
   def add_entry(entry)
     raise 'The secret diary is closed!' if @locker.lock_it
+    raise 'Diary already locked!' if @locker.lock_it == true
     @entries << entry
   end
 
