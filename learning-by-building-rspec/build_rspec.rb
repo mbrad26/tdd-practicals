@@ -1,7 +1,11 @@
 class Expect
 
-  def to_be_equal(arg1, arg2)
-    return 'Test fails! D:' unless arg1 == arg2
+  def initialize(arg)
+    @arg = arg
+  end
+
+  def to_equal(other_arg)
+    return 'Test fails! D:' unless @arg == other_arg
     'Test passes! :)'
   end
 
