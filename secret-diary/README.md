@@ -1,8 +1,8 @@
 ## Object Oriented Encapsulation & Cohesion
 
-We break our programs up into multiple objects to control complexity
+We break our programs up into multiple objects to control complexity.
 Each class should have one purpose or job, sometimes referred to as its responsibility.
-A class has high cohesion when everything inside of it relates to that purpose
+A class has high cohesion when everything inside of it relates to that purpose.
 
 Test-drive the secret diary example:
 
