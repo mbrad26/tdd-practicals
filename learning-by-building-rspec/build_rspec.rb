@@ -4,9 +4,21 @@ class Expect
     @arg = arg
   end
 
-  def to_equal(other_arg)
-    return 'Test fails! D:' unless @arg == other_arg
+  def to(arg)
+    return 'Test fails! D:' unless arg.compare(@arg)
     'Test passes! :)'
   end
+end
 
+class Equal
+
+  def initialize(arg)
+    @arg = arg
+  end
+
+  def compare(arg)
+    return 'Test passes! :)' if @arg == arg
+    'Test fails! D:'
+    false
+  end
 end
