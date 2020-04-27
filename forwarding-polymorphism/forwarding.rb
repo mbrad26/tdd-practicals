@@ -1,8 +1,10 @@
 ## Exercise 2
 
 class User
+  attr_reader :password
+
   def initialize(name, bio, age, password)
-    @name = method_name
+    @name = name
     @bio = bio
     @age = age
     @password = password
@@ -20,12 +22,12 @@ class User
 end
 
 class Authenticate
-  def initialize
-    @password = User.new.password
+  def initialize(name, bio, age, password)
+    @user = User.new(name, bio, age, password)
   end
 
   def authenticate(candidate_password)
-    return true if candidate_password == @password
+    return true if candidate_password == @user.password
     false
   end
 end
