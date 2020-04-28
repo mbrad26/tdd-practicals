@@ -2,8 +2,9 @@ require 'socket'
 
 server = TCPServer.new(2345)
 
+socket = server.accept
+
 while true do
-  socket = server.accept
 
   socket.puts 'What do you say?'
 
