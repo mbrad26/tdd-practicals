@@ -17,7 +17,7 @@ describe CheckBirthday do
         month = Time.now.month
         subject = described_class.new(day, month)
 
-        expect(subject.check_birthday).to eq 'Your birthday will be in 2 days'
+        expect(subject.check_birthday).to eq 'Your birthday will be in 3 days'
       end
     end
   end

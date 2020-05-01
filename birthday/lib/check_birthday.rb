@@ -18,7 +18,7 @@ class CheckBirthday
   end
 
   def days_until_birthday
-    days = ((parse_birthday_date - Time.now) / 86400).to_i
+    days = ((parse_birthday_date - Time.now) / 86400).ceil
     return 365 + days if @month.to_i < Time.now.month
     days
   end

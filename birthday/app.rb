@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/check_birthday'
 
 class Birthday < Sinatra::Base
+  configure(:development) { set :session_secret, 'set' }
   enable :sessions
 
   get '/' do
