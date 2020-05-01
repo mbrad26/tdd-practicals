@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/check_birthday'
 
 class Birthday < Sinatra::Base
   enable :sessions
@@ -11,6 +12,7 @@ class Birthday < Sinatra::Base
     session[:name] = params[:name]
     session[:day] = params[:day]
     session[:month] = params[:month]
+    p params
     redirect '/birthday_message'
   end
 
@@ -18,6 +20,7 @@ class Birthday < Sinatra::Base
     @name = session[:name]
     @day = session[:day]
     @month = session[:month]
+    @birthday = CheckBirthday.new(@day, @month)
     erb :birthday_message
   end
 
