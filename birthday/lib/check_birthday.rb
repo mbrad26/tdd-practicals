@@ -6,17 +6,11 @@ class CheckBirthday
   end
 
   def check_birthday
-    return 'Happy Birthday' if birthday?
-    "Your birthday will be in #{days_until_birthday} days"
+    return "Your birthday will be in #{days_until_birthday} days" if days_until_birthday != 0
+    'Happy Birthday'
   end
 
   private
-
-  def birthday?
-    now = Time.now
-    return true if @day == now.day && @month == now.month
-    false
-  end
 
   def parse_birthday_date
     year = Time.now.year
